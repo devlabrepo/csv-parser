@@ -15,7 +15,7 @@ public class CSVParser {
 
     private final String path = "src/main/resources/files/";
 
-    public List<Map<String,String>> csvParser(String fileName, char separator ) {
+    public List < Map < String , String > > csvParser(String fileName, char separator ) {
 
         List < Map < String, String >> list = new ArrayList< >();
         try (InputStream in = new FileInputStream(path + fileName)) {
