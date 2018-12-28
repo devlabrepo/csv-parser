@@ -15,17 +15,17 @@ public class CSVParser {
 
     private final String path = "src/main/resources/files/";
 
-    public List < Map < String , String > > csvParser(String fileName, char separator ) {
+    public List<Map<String, String>> csvParser(String fileName, char separator) {
 
-        List < Map < String, String >> list = new ArrayList< >();
+        List<Map<String, String>> list = new ArrayList<>();
         try (InputStream in = new FileInputStream(path + fileName)) {
-            CSV csv = new CSV(true, separator, in );
-            List < String > fieldNames = null;
-            if (csv.hasNext()) fieldNames = new ArrayList <> (csv.next());
+            CSV csv = new CSV(true, separator, in);
+            List<String> fieldNames = null;
+            if (csv.hasNext()) fieldNames = new ArrayList<>(csv.next());
 
             while (csv.hasNext()) {
-                List < String > x = csv.next();
-                Map < String, String > obj = new LinkedHashMap< >();
+                List<String> x = csv.next();
+                Map<String, String> obj = new LinkedHashMap<>();
                 for (int i = 0; i < fieldNames.size(); i++) {
                     obj.put(fieldNames.get(i), x.get(i));
                 }
